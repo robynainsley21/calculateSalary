@@ -1,0 +1,19 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    margin: 1rem auto 1rem;
+}
+
+.gender-box{
+    display: flex;
+    flex-direction: column;
+}
