@@ -9,78 +9,104 @@
   <body>
     <div>
       <form class="wrapper">
-        <label for="">First name:</label>
-        <input type="text" />
-        <label for="">Last name:</label>
-        <input type="text" />
-        <label for="">Age</label>
-        <input type="number" />
-        <label for="">Date of birth: </label>
-        <input type="date" />
+        <label for="firstName">First name:</label>
+        <input type="text" id="firstName" />
+        <label for="lastName">Last name:</label>
+        <input type="text" id="lastName" />
+        <label for="age">Age</label>
+        <input type="text" id="age" />
+        <label for="birthDate">Date of birth: </label>
+        <input type="date" id="birthDate" />
         <div class="flex-column">
           <p>Select your gender</p>
-          <div>
-            <label for="male">Male </label>
-            <input id="male" type="radio" value="Male" name="gender" />
-          </div>
-          <div>
-            <label for="female">Female </label>
-            <input id="female" type="radio" value="Female" name="gender" />
+          <div class="gender-container">
+            <div>
+              <input id="male" type="radio" value="Male" name="gender" />
+              <label for="male">Male </label>
+            </div>
+            <div>
+              <input id="female" type="radio" value="Female" name="gender" />
+              <label for="female">Female </label>
+            </div>
           </div>
         </div>
-        <div class="titles">
+
+        <div id="title">
           <p>Select your title</p>
-          <div>
-            <label for="male">Miss </label>
-            <input id="male" type="radio" value="miss" name="title" />
-          </div>
-          <div>
-            <label for="female">Mr</label>
-            <input id="female" type="radio" value="mr" name="title" />
-          </div>
-          <div>
-            <label for="male">Mrs</label>
-            <input id="male" type="radio" value="mrs" name="title" />
-          </div>
-          <div>
-            <label for="female">Doctor </label>
-            <input id="female" type="radio" value="doctor" name="title" />
+          <div class="title-main">
+            <div class="title-container">
+              <div>
+                <input id="male" type="radio" value="miss" name="title" />
+                <label for="male">Miss </label>
+              </div>
+              <div>
+                <input id="female" type="radio" value="mr" name="title" />
+                <label for="female">Mr</label>
+              </div>
+            </div>
+            <div class="title-container">
+              <div>
+                <input id="male" type="radio" value="mrs" name="title" />
+                <label for="male">Mrs</label>
+              </div>
+              <div>
+                <input id="female" type="radio" value="doctor" name="title" />
+                <label for="female">Doctor </label>
+              </div>
+            </div>
           </div>
         </div>
 
-          <div class="flex-column">
-            <p>Select your subjects</p>
+        <div class="flex-column">
+          <p>Select your subjects</p>
+          <div class="subjects-parent">
             <div>
-              <label for="html">HTML</label>
-              <input type="checkbox" id="html" name="subject" />
-            </div>
-            <div>
-              <label for="css">CSS</label>
-              <input type="checkbox" id="css" name="subject" />
-            </div>
-            <div>
-              <label for="javascript">JavaScript</label>
-              <input type="checkbox" id="javascript" name="subject" />
+              <div>
+                <input type="checkbox" id="html" name="subject" />
+                <label for="html">HTML</label>
+              </div>
+              <div>
+                <input type="checkbox" id="css" name="subject" />
+                <label for="css">CSS</label>
+              </div>
+              <div>
+                <input type="checkbox" id="javascript" name="subject" />
+                <label for="javascript">JavaScript</label>
+              </div>
             </div>
 
             <div>
-              <label for="angular">Angular</label>
-              <input type="checkbox" id="angular" name="subject" />
-            </div>
-            <div>
-              <label for="vue">VueJS</label>
-              <input type="checkbox" id="vue" name="subject" />
-            </div>
-            <div>
-              <label for="react">React</label>
-              <input type="checkbox" id="react" name="subject" />
+              <div>
+                <input type="checkbox" id="angular" name="subject" />
+                <label for="angular">Angular</label>
+              </div>
+              <div>
+                <input type="checkbox" id="vue" name="subject" />
+                <label for="vue">VueJS</label>
+              </div>
+              <div>
+                <input type="checkbox" id="react" name="subject" />
+                <label for="react">React</label>
+              </div>
             </div>
           </div>
-          <div id="calculate">
-            <p>Please enter the following information:</p>
-            <label for="salary">Salary</label>
-            <input type="number" id="salary">
+        </div>
+        <div id="calculate">
+          <p>Please enter the following information:</p>
+          <div class="calc-box">
+            <div>
+              <label for="salary">Salary</label>
+              <input type="text" id="salary" placeholder="e.g. R5000" />
+              <label for="rate">Rate</label>
+              <input type="text" id="rate" placeholder="per hour" />
+            </div>
+            <div class="output-box">
+              <input type="button" calculate value="Calculate" />
+              <input type="text" readonly placeholder=" = total salary">
+            </div>
           </div>
+        </div>
+        <input type="submit" submit value="Submit form" />
       </form>
     </div>
     <script src="script/script.js"></script>
