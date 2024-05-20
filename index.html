@@ -91,18 +91,32 @@
             </div>
           </div>
         </div>
-        <div id="calculate">
+        <div id="employed">
+          <p>Are you currently employed?</p>
+          <div class="employed-box">
+            <div>
+              <input type="radio" name="employed" id="yes">
+              <label for="yes">Yes</label>
+            </div>
+            <div>
+              <input type="radio" name="employed" id="no">
+              <label for="no">No</label>
+            </div>
+          </div>
+ 
+        </div>
+        <div id="calculate-box">
           <p>Please enter the following information:</p>
           <div class="calc-box">
             <div>
-              <label for="salary">Salary</label>
-              <input type="text" id="salary" placeholder="e.g. R5000" />
+              <label for="hours">Hours</label>
+              <input type="text" id="hours" placeholder="hours worked" required />
               <label for="rate">Rate</label>
-              <input type="text" id="rate" placeholder="per hour" />
+              <input type="text" id="rate" placeholder="amount per hr" required />
             </div>
             <div class="output-box">
               <input type="button" calculate value="Calculate" />
-              <input type="text" readonly placeholder=" = total salary">
+              <input type="text" readonly placeholder=" = total salary" output>
             </div>
           </div>
         </div>
