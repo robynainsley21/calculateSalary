@@ -46,7 +46,7 @@ body{
 }
 
 /* gender section */
-:is(.gender-container, .title-main, .subjects-parent, .employed-box){
+:is(.gender-container, .title-main, .subjects-parent, .employed-box, .form-btns){
     display: flex;
     justify-content: space-around;
     margin: .3rem;
@@ -75,8 +75,7 @@ body{
     margin-top: 1rem;
 }
 
-:is(input[type='button'], input[type='submit']){
-    width: 100%;
+:is(input[type='button'], input[type='submit'], input[type='reset']){
     margin: .7rem auto;
     padding: .4rem;
     border-radius: 7px;
@@ -91,6 +90,11 @@ input[type='button']{
 
 .output-box{
     margin: auto;
+}
+
+/* submit btns */
+:is(input[type='reset'], input[type='submit']){
+    width: 40%;
 }
 
 /* for javascript */

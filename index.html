@@ -21,11 +21,11 @@
           <p>Select your gender</p>
           <div class="gender-container">
             <div>
-              <input id="male" type="radio" value="Male" name="gender" />
+              <input id="male" type="radio" value="Male" name="gender" gender/>
               <label for="male">Male </label>
             </div>
             <div>
-              <input id="female" type="radio" value="Female" name="gender" />
+              <input id="female" type="radio" value="Female" name="gender" gender/>
               <label for="female">Female </label>
             </div>
           </div>
@@ -36,21 +36,21 @@
           <div class="title-main">
             <div class="title-container">
               <div>
-                <input id="male" type="radio" value="miss" name="title" />
+                <input id="male" type="radio" value="miss" name="title" title />
                 <label for="male">Miss </label>
               </div>
               <div>
-                <input id="female" type="radio" value="mr" name="title" />
+                <input id="female" type="radio" value="mr" name="title" title/>
                 <label for="female">Mr</label>
               </div>
             </div>
             <div class="title-container">
               <div>
-                <input id="male" type="radio" value="mrs" name="title" />
+                <input id="male" type="radio" value="mrs" name="title" title/>
                 <label for="male">Mrs</label>
               </div>
               <div>
-                <input id="female" type="radio" value="doctor" name="title" />
+                <input id="female" type="radio" value="doctor" name="title" title/>
                 <label for="female">Doctor </label>
               </div>
             </div>
@@ -62,30 +62,30 @@
           <div class="subjects-parent">
             <div>
               <div>
-                <input type="checkbox" id="html" name="subject" />
+                <input type="checkbox" id="html" name="subject" subject/>
                 <label for="html">HTML</label>
               </div>
               <div>
-                <input type="checkbox" id="css" name="subject" />
+                <input type="checkbox" id="css" name="subject" subject/>
                 <label for="css">CSS</label>
               </div>
               <div>
-                <input type="checkbox" id="javascript" name="subject" />
+                <input type="checkbox" id="javascript" name="subject" subject/>
                 <label for="javascript">JavaScript</label>
               </div>
             </div>
 
             <div>
               <div>
-                <input type="checkbox" id="angular" name="subject" />
+                <input type="checkbox" id="angular" name="subject" subject />
                 <label for="angular">Angular</label>
               </div>
               <div>
-                <input type="checkbox" id="vue" name="subject" />
+                <input type="checkbox" id="vue" name="subject" subject/>
                 <label for="vue">VueJS</label>
               </div>
               <div>
-                <input type="checkbox" id="react" name="subject" />
+                <input type="checkbox" id="react" name="subject" subject/>
                 <label for="react">React</label>
               </div>
             </div>
@@ -110,18 +110,25 @@
           <div class="calc-box">
             <div>
               <label for="hours">Hours</label>
-              <input type="text" id="hours" placeholder="hours worked" required />
+              <input type="text" id="hours" placeholder="hours worked" required name="hours"/>
               <label for="rate">Rate</label>
-              <input type="text" id="rate" placeholder="amount per hr" required />
+              <input type="text" id="rate" placeholder="amount per hr" required name="rate"/>
             </div>
             <div class="output-box">
-              <input type="button" calculate value="Calculate" />
+              <input type="button" calculate value="Calculate" name=""/>
               <input type="text" readonly placeholder=" = total salary" output>
             </div>
           </div>
         </div>
-        <input type="submit" submit value="Submit form" />
+        <div class="form-btns">
+          <input type="submit" submit value="Submit form" />
+          <input type="reset">
+        </div>
+
       </form>
+      <div id="submitted-form">
+
+      </div>
     </div>
     <script src="script/script.js"></script>
   </body>
