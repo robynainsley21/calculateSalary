@@ -74,18 +74,38 @@ formElements.submitBtn.addEventListener("click", (event) => {
     }
   });
 
-  const firstName = formElements.firstName.value
-  const lastName = formElements.lastName.value
-  const age = formElements.age.value
-  const birthDate = formElements.birthDate.value
-  const title = formElements.title.value
+  const firstName = formElements.firstName.value ? formElements.firstName.value : 'No name included'
+  const lastName = formElements.lastName.value ? formElements.lastName.value : 'No surname included'
+  const age = formElements.age.value ? formElements.age.value : 'No age included'
+  const birthDate = formElements.birthDate.value ? formElements.birthDate.value : 'No birth date included'
+  const title = formElements.title.value ? formElements.title.value : 'No title included'
   const selectedGender = [...formElements.gender].find(val => val.checked)?.value || 'Not specified'
-  const employmentStatus = selectYes.checked ? "Employed" : "Not employed"
+  const genderRadio = document.querySelectorAll("[name=employed]")
+
+  let selectedRadio
+  const employmentStatus = () => {
+    genderRadio.forEach(radio => {
+      if(radio.value === 'yes'){
+        selectedRadio = 'Yes'
+      } else if (radio.value === 'no'){
+        selectedRadio = "No"
+      } else {
+        genderRadio = ''
+      }
+    })
+
+  }
+  selectYes.checked ? "Employed" : "Not employed"
+
+  // const allSubjects = formElements.subject.forEach(subject => {
+  //   console.log(subject)
+  // })
+  // console.log(allSubjects);
 
   submittedFormBox.innerHTML = `
     <div>
       <h2>Form Details</h2>
-      <p>First name: ${firstName}</p>
+      <p>First name: ${firstName} </p>
       <p>Last name: ${lastName}</p>
       <p>Age: ${age}</p>
       <p>Date of birth: ${birthDate}</p>
