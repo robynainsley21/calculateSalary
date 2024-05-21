@@ -11,12 +11,14 @@ const formElements = {
   title: document.querySelectorAll("[title]"),
   subject: document.querySelectorAll("[subject]"),
   submitBtn: document.querySelector("[submit]"),
-  resetBtn: document.querySelector("[reset]")
+  resetBtn: document.querySelector("[reset]"),
 };
 
 /*select employment option*/
 const selectNo = document.getElementById("no");
 const selectYes = document.getElementById("yes");
+// const selectRadio = document.querySelector("[name]")
+const employmentRadio = document.querySelectorAll("[name=employed]");
 const calcBox = document.getElementById("calculate-box");
 
 /*calculation dom elements*/
@@ -51,16 +53,15 @@ calcItems.calcBtn.addEventListener("click", () => {
   let result = parseFloat(hours * rate);
 
   calcItems.totalOutput.value = `R${result}`;
-  console.log(result);
 });
 
 /*clearing submitted form*/
-formElements.resetBtn.addEventListener('click', () => {
-  submittedFormBox.innerHTML = ' '
-})
+formElements.resetBtn.addEventListener("click", () => {
+  submittedFormBox.innerHTML = " ";
+});
 
 /*submitting the form*/
-submittedFormBox.innerHTML = ' '
+submittedFormBox.innerHTML = " ";
 
 formElements.submitBtn.addEventListener("click", (event) => {
   //prevents form default behavior if inputs are invalid
@@ -74,33 +75,50 @@ formElements.submitBtn.addEventListener("click", (event) => {
     }
   });
 
-  const firstName = formElements.firstName.value ? formElements.firstName.value : 'No name included'
-  const lastName = formElements.lastName.value ? formElements.lastName.value : 'No surname included'
-  const age = formElements.age.value ? formElements.age.value : 'No age included'
-  const birthDate = formElements.birthDate.value ? formElements.birthDate.value : 'No birth date included'
-  const title = formElements.title.value ? formElements.title.value : 'No title included'
-  const selectedGender = [...formElements.gender].find(val => val.checked)?.value || 'Not specified'
-  const genderRadio = document.querySelectorAll("[name=employed]")
+  let subjectsExist =
+    subjectsArray.length > 0 ? subjectsArray.join(", ") : "None selected";
 
-  let selectedRadio
+  const firstName = formElements.firstName.value
+    ? formElements.firstName.value
+    : "No name included";
+  const lastName = formElements.lastName.value
+    ? formElements.lastName.value
+    : "No surname included";
+  const age = formElements.age.value
+    ? formElements.age.value
+    : "No age included";
+  const birthDate = formElements.birthDate.value
+    ? formElements.birthDate.value
+    : "No birth date included";
+  const title = formElements.title.value
+    ? formElements.title.value
+    : "No title included";
+  const selectedGender =
+    [...formElements.gender].find((val) => val.checked)?.value ||
+    "Not specified";
+
+  // let selectedRadio;
+  // const employmentStatus = () => {
+  //   if (employmentRadio.value) {
+  //     if (employmentRadio.value === "yes") {
+  //       return (selectedRadio = "Yes");
+  //     } else if (employmentRadio.value === "no") {
+  //       return (selectedRadio = "No");
+  //     }
+  //   } else {
+  //     return (employmentRadio.value = "Not selected");
+  //   }
+
+  //   return selectedRadio;
+  // };
+
+  // selectYes.checked ? "Employed" : "Not employed";
+
+  //turned all radio btns in employment section into array and found which one was checked and displayed the selected one
   const employmentStatus = () => {
-    genderRadio.forEach(radio => {
-      if(radio.value === 'yes'){
-        selectedRadio = 'Yes'
-      } else if (radio.value === 'no'){
-        selectedRadio = "No"
-      } else {
-        genderRadio = ''
-      }
-    })
-
-  }
-  selectYes.checked ? "Employed" : "Not employed"
-
-  // const allSubjects = formElements.subject.forEach(subject => {
-  //   console.log(subject)
-  // })
-  // console.log(allSubjects);
+    const selectedEmployment = [...employmentRadio].find((val) => val.checked);
+    return selectedEmployment ? selectedEmployment.value : "Not selected";
+  };
 
   submittedFormBox.innerHTML = `
     <div>
@@ -114,12 +132,8 @@ formElements.submitBtn.addEventListener("click", (event) => {
         selectedGender
         // formElements.gender.checked ? formElements.gender.checked : "None selected"
       }</p>
-      <p>Subject(s): ${
-        subjectsArray.length > 0
-          ? subjectsArray.join(", ")
-          : "No subject selected"
-      }</p>
-      <p>Employment status: ${employmentStatus}</p>
+      <p>Subject(s): ${subjectsExist} </p>
+      <p>Employment status: ${employmentStatus()}</p>
     </div>
   `;
 });
