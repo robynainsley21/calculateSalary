@@ -3,133 +3,231 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- stylesheet -->
     <link rel="stylesheet" href="css/styles.css" />
     <title>Calculate Salary</title>
   </head>
   <body>
-    <div>
       <form class="wrapper">
-        <label for="firstName">First name:</label>
-        <input type="text" id="firstName" />
-        <label for="lastName">Last name:</label>
-        <input type="text" id="lastName" />
-        <label for="age">Age</label>
-        <input type="text" id="age" />
-        <label for="birthDate">Date of birth: </label>
-        <input type="date" id="birthDate" />
-        <div class="flex-column">
-          <p>Select your gender</p>
-          <div class="gender-container">
-            <div>
-              <input id="male" type="radio" value="Male" name="gender" gender/>
-              <label for="male">Male </label>
-            </div>
-            <div>
-              <input id="female" type="radio" value="Female" name="gender" gender/>
-              <label for="female">Female </label>
+        <div class="details grid-1">
+          <label for="firstName">First name:</label>
+          <input type="text" id="firstName" />
+          <label for="lastName">Last name:</label>
+          <input type="text" id="lastName" />
+          <label for="age">Age</label>
+          <input type="text" id="age" />
+          <label for="birthDate">Date of birth: </label>
+          <input type="date" id="birthDate" />
+        </div>
+        <div class="grid-2">
+          <div class="flex-column">
+            <p>Select your gender</p>
+            <div class="gender-container">
+              <div>
+                <input
+                  id="male"
+                  type="radio"
+                  value="Male"
+                  name="gender"
+                  gender
+                />
+                <label for="male">Male </label>
+              </div>
+              <div>
+                <input
+                  id="female"
+                  type="radio"
+                  value="Female"
+                  name="gender"
+                  gender
+                />
+                <label for="female">Female </label>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div id="title">
-          <p>Select your title</p>
-          <div class="title-main">
-            <div class="title-container">
-              <div>
-                <input id="male" type="radio" value="miss" name="title" title />
-                <label for="male">Miss </label>
+          <div id="title">
+            <p>Select your title</p>
+            <div class="title-main">
+              <div class="title-container">
+                <div>
+                  <input
+                    id="male"
+                    type="radio"
+                    value="miss"
+                    name="title"
+                    title
+                  />
+                  <label for="male">Miss </label>
+                </div>
+                <div>
+                  <input
+                    id="female"
+                    type="radio"
+                    value="mr"
+                    name="title"
+                    title
+                  />
+                  <label for="female">Mr</label>
+                </div>
               </div>
-              <div>
-                <input id="female" type="radio" value="mr" name="title" title/>
-                <label for="female">Mr</label>
-              </div>
-            </div>
-            <div class="title-container">
-              <div>
-                <input id="male" type="radio" value="mrs" name="title" title/>
-                <label for="male">Mrs</label>
-              </div>
-              <div>
-                <input id="female" type="radio" value="doctor" name="title" title/>
-                <label for="female">Doctor </label>
+              <div class="title-container">
+                <div>
+                  <input
+                    id="male"
+                    type="radio"
+                    value="mrs"
+                    name="title"
+                    title
+                  />
+                  <label for="male">Mrs</label>
+                </div>
+                <div>
+                  <input
+                    id="female"
+                    type="radio"
+                    value="doctor"
+                    name="title"
+                    title
+                  />
+                  <label for="female">Doctor </label>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="flex-column">
-          <p>Select your subjects</p>
-          <div class="subjects-parent">
-            <div>
+          <div class="flex-column">
+            <p>Select your subjects</p>
+            <div class="subjects-parent">
               <div>
-                <input type="checkbox" id="html" name="subject" value="HTML" subject/>
-                <label for="html">HTML</label>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="html"
+                    name="subject"
+                    value="HTML"
+                    subject
+                  />
+                  <label for="html">HTML</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="css"
+                    name="subject"
+                    value="CSS"
+                    subject
+                  />
+                  <label for="css">CSS</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="javascript"
+                    name="subject"
+                    value="JavaScript"
+                    subject
+                  />
+                  <label for="javascript">JavaScript</label>
+                </div>
               </div>
-              <div>
-                <input type="checkbox" id="css" name="subject" value="CSS" subject/>
-                <label for="css">CSS</label>
-              </div>
-              <div>
-                <input type="checkbox" id="javascript" name="subject" value="JavaScript" subject/>
-                <label for="javascript">JavaScript</label>
-              </div>
-            </div>
 
-            <div>
               <div>
-                <input type="checkbox" id="angular" name="subject" value="Angular" subject />
-                <label for="angular">Angular</label>
-              </div>
-              <div>
-                <input type="checkbox" id="vue" name="subject" value="VueJS" subject/>
-                <label for="vue">VueJS</label>
-              </div>
-              <div>
-                <input type="checkbox" id="react" name="subject" value="React" subject/>
-                <label for="react">React</label>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="angular"
+                    name="subject"
+                    value="Angular"
+                    subject
+                  />
+                  <label for="angular">Angular</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="vue"
+                    name="subject"
+                    value="VueJS"
+                    subject
+                  />
+                  <label for="vue">VueJS</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="react"
+                    name="subject"
+                    value="React"
+                    subject
+                  />
+                  <label for="react">React</label>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div id="employed">
-          <p>Are you currently employed?</p>
-          <div class="employed-box">
-            <div>
-              <input type="radio" name="employed" id="yes" value="Yes">
-              <label for="yes">Yes</label>
-            </div>
-            <div>
-              <input type="radio" name="employed" id="no" value="No">
-              <label for="no">No</label>
+          <div id="employed">
+            <p>Are you currently employed?</p>
+            <div class="employed-box">
+              <div>
+                <input type="radio" name="employed" id="yes" value="Yes" />
+                <label for="yes">Yes</label>
+              </div>
+              <div>
+                <input type="radio" name="employed" id="no" value="No" />
+                <label for="no">No</label>
+              </div>
             </div>
           </div>
- 
+          <div class="form-btns">
+            <input type="submit" submit value="Submit form" />
+            <input type="reset" reset />
+          </div>
         </div>
-        <div id="calculate-box">
+        <div id="calculate-box" class="grid-3">
           <p>Please enter the following information:</p>
           <div class="calc-box">
             <div>
               <label for="hours">Hours</label>
-              <input type="text" id="hours" placeholder="hours worked" required name="hours"/>
+              <input
+                type="text"
+                id="hours"
+                placeholder="hours worked"
+                required
+                name="hours"
+              />
               <label for="rate">Rate</label>
-              <input type="text" id="rate" placeholder="amount per hr" required name="rate"/>
+              <input
+                type="text"
+                id="rate"
+                placeholder="amount per hr"
+                required
+                name="rate"
+              />
             </div>
             <div class="output-box">
-              <input type="button" calculate value="Calculate" name=""/>
-              <input type="text" readonly placeholder=" = total salary" output>
+              <input type="button" calculate value="Calculate" name="" />
+              <input
+                type="text"
+                readonly
+                placeholder=" = total salary"
+                output
+              />
             </div>
           </div>
         </div>
-        <div class="form-btns">
-          <input type="submit" submit value="Submit form" />
-          <input type="reset" reset>
-        </div>
-
       </form>
-      <div id="submitted-form">
+      <div id="submitted-form"></div>
 
-      </div>
-    </div>
     <script src="script/script.js"></script>
   </body>
 </html>

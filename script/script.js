@@ -121,7 +121,7 @@ formElements.submitBtn.addEventListener("click", (event) => {
   };
 
   submittedFormBox.innerHTML = `
-    <div>
+    <div class="form-details">
       <h2>Form Details</h2>
       <p>First name: ${firstName} </p>
       <p>Last name: ${lastName}</p>
