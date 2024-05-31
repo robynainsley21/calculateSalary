@@ -47,18 +47,24 @@ selectNo.addEventListener("click", () => {
 });
 
 /*calculating salary*/
-calcItems.calcBtn.addEventListener("click", () => {
+const calculateSalary = () => {
+  console.log('this works')
   const hours = parseFloat(calcItems.hoursValue.value);
   const rate = parseFloat(calcItems.rateValue.value);
   let result = parseFloat(hours * rate);
 
   calcItems.totalOutput.value = `R${result}`;
-});
+}
 
 /*clearing submitted form*/
 formElements.resetBtn.addEventListener("click", () => {
-  submittedFormBox.innerHTML = " ";
+  submittedFormBox.classList.remove('visible');
+  submittedFormBox.classList.add('hidden');
+  submittedFormBox.innerHTML = ''
 });
+
+calcItems.calcBtn.addEventListener("click", calculateSalary);
+
 
 /* employment status functionality*/
 const statusTrue = () => {
@@ -75,6 +81,12 @@ const statusTrue = () => {
     console.log("Employment status: yes")
    htmlInner = `
     <span>Yes</span>
+    <div>
+      <p>Employment information:</p>
+      <p>Hours worked: ${calculateSalary.hours}</p>
+      <p>Work rate: ${calculateSalary.rate}</p>
+      <p>Total salary: ${calculateSalary.result}</p>
+    </div>
     `
   } else if (status === "No") {
     console.log("Employment status: no")
