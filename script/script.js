@@ -60,6 +60,33 @@ formElements.resetBtn.addEventListener("click", () => {
   submittedFormBox.innerHTML = " ";
 });
 
+/* employment status functionality*/
+const statusTrue = () => {
+  const employmentStatus = () => {
+    const selectedEmployment = [...employmentRadio].find((val) => val.checked);
+    console.log(selectedEmployment)
+    return selectedEmployment ? selectedEmployment.value : null
+  };
+
+  let htmlInner = ''
+
+  const status = employmentStatus()
+  if (status === "Yes") {
+    console.log("Employment status: yes")
+   htmlInner = `
+    <span>Yes</span>
+    `
+  } else if (status === "No") {
+    console.log("Employment status: no")
+    htmlInner = `<span>No</span>`
+  } else {
+    console.log("Employment status: none selected")
+    htmlInner = `<span>None selected</span>`
+  }
+
+  return htmlInner
+}
+
 /*submitting the form*/
 submittedFormBox.innerHTML = " ";
 
@@ -81,44 +108,30 @@ formElements.submitBtn.addEventListener("click", (event) => {
   const firstName = formElements.firstName.value
     ? formElements.firstName.value
     : "No name included";
+
   const lastName = formElements.lastName.value
     ? formElements.lastName.value
     : "No surname included";
+
   const age = formElements.age.value
     ? formElements.age.value
     : "No age included";
+
   const birthDate = formElements.birthDate.value
     ? formElements.birthDate.value
     : "No birth date included";
+
   const title = formElements.title.value
     ? formElements.title.value
     : "No title included";
+
   const selectedGender =
     [...formElements.gender].find((val) => val.checked)?.value ||
     "Not specified";
 
-  // let selectedRadio;
-  // const employmentStatus = () => {
-  //   if (employmentRadio.value) {
-  //     if (employmentRadio.value === "yes") {
-  //       return (selectedRadio = "Yes");
-  //     } else if (employmentRadio.value === "no") {
-  //       return (selectedRadio = "No");
-  //     }
-  //   } else {
-  //     return (employmentRadio.value = "Not selected");
-  //   }
-
-  //   return selectedRadio;
-  // };
-
-  // selectYes.checked ? "Employed" : "Not employed";
-
   //turned all radio btns in employment section into array and found which one was checked and displayed the selected one
-  const employmentStatus = () => {
-    const selectedEmployment = [...employmentRadio].find((val) => val.checked);
-    return selectedEmployment ? selectedEmployment.value : "Not selected";
-  };
+  const employmentStatusHTML = statusTrue()
+
 
   submittedFormBox.innerHTML = `
     <div class="form-details">
@@ -133,7 +146,7 @@ formElements.submitBtn.addEventListener("click", (event) => {
         // formElements.gender.checked ? formElements.gender.checked : "None selected"
       }</p>
       <p>Subject(s): ${subjectsExist} </p>
-      <p>Employment status: ${employmentStatus()}</p>
+      <div>Employment status: ${employmentStatusHTML}</div>
     </div>
   `;
 });
