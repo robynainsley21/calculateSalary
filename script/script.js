@@ -54,6 +54,7 @@ const calculateSalary = () => {
   let result = parseFloat(hours * rate);
 
   calcItems.totalOutput.value = `R${result}`;
+  return { hours, rate, result }
 }
 
 /*clearing submitted form*/
@@ -61,6 +62,7 @@ formElements.resetBtn.addEventListener("click", () => {
   submittedFormBox.classList.remove('visible');
   submittedFormBox.classList.add('hidden');
   submittedFormBox.innerHTML = ''
+  calcBox.classList.add('hidden')
 });
 
 calcItems.calcBtn.addEventListener("click", calculateSalary);
@@ -78,21 +80,19 @@ const statusTrue = () => {
 
   const status = employmentStatus()
   if (status === "Yes") {
-    console.log("Employment status: yes")
+    const salaryDetails = calculateSalary()
    htmlInner = `
     <span>Yes</span>
     <div>
       <p>Employment information:</p>
-      <p>Hours worked: ${calculateSalary.hours}</p>
-      <p>Work rate: ${calculateSalary.rate}</p>
-      <p>Total salary: ${calculateSalary.result}</p>
+      <p>Hours worked: ${salaryDetails.hours}</p>
+      <p>Work rate: R${salaryDetails.rate}/hr</p>
+      <p>Total salary: R${salaryDetails.result}</p>
     </div>
     `
   } else if (status === "No") {
-    console.log("Employment status: no")
     htmlInner = `<span>No</span>`
   } else {
-    console.log("Employment status: none selected")
     htmlInner = `<span>None selected</span>`
   }
 
@@ -105,6 +105,9 @@ submittedFormBox.innerHTML = " ";
 formElements.submitBtn.addEventListener("click", (event) => {
   //prevents form default behavior if inputs are invalid
   event.preventDefault();
+
+  submittedFormBox.classList.add('visible')
+  submittedFormBox.classList.remove('hidden')
 
   let subjectsArray = [];
 
